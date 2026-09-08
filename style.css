@@ -195,7 +195,13 @@ footer p {
 
     .card {
         min-height: 230px;
-    }
+    }.subtitle {
+    grid-column: 1;
+    margin-top: -10px;
+    font-size: 18px;
+    color: #888;
+    font-weight: 400;
+}
 
 
     footer {
