@@ -6,46 +6,196 @@
 
     <title>Личный сайт</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero {
+            min-height: 65vh;
+            padding: 70px 7vw;
+
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 120px);
+            line-height: 0.9;
+            font-weight: 700;
+            letter-spacing: -6px;
+
+            max-width: 900px;
+        }
+
+        .cards {
+            padding: 0 7vw 130px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            position: relative;
+
+            min-height: 300px;
+            padding: 28px;
+
+            background: #111;
+            border: 1px solid #242424;
+
+            color: white;
+            text-decoration: none;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            background: #161616;
+            border-color: #444;
+        }
+
+        .number {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .card-bottom {
+            margin-top: auto;
+        }
+
+        .card h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .arrow {
+            position: absolute;
+            right: 25px;
+            bottom: 23px;
+
+            font-size: 28px;
+            color: #666;
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover .arrow {
+            transform: translate(4px, -4px);
+            color: white;
+        }
+
+        footer {
+            min-height: 120px;
+            padding: 35px 7vw;
+
+            background: #050505;
+            border-top: 1px solid #171717;
+
+            display: flex;
+            align-items: center;
+        }
+
+        footer p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                min-height: 55vh;
+                padding: 45px 6vw;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 14vw, 80px);
+                letter-spacing: -3px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                padding: 0 6vw 80px;
+            }
+
+            .card {
+                min-height: 230px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <main>
 
-        <!-- Главный блок -->
         <section class="hero">
-            <h1>Привет, хочешь<br>личный сайт?</h1>
+            <h1>
+                Привет, хочешь<br>
+                личный сайт?
+            </h1>
         </section>
 
-
-        <!-- Карточки -->
         <section class="cards">
 
             <a href="#" class="card">
-                <span>01</span>
-                <h2>Сайт №1</h2>
-                <p>Описание появится позже</p>
+                <div class="number">01</div>
+
+                <div class="card-bottom">
+                    <h2>Сайт №1</h2>
+                    <p>Описание появится позже</p>
+                </div>
+
+                <div class="arrow">↗</div>
             </a>
 
             <a href="#" class="card">
-                <span>02</span>
-                <h2>Сайт №2</h2>
-                <p>Описание появится позже</p>
+                <div class="number">02</div>
+
+                <div class="card-bottom">
+                    <h2>Сайт №2</h2>
+                    <p>Описание появится позже</p>
+                </div>
+
+                <div class="arrow">↗</div>
             </a>
 
             <a href="#" class="card">
-                <span>03</span>
-                <h2>Сайт №3</h2>
-                <p>Описание появится позже</p>
+                <div class="number">03</div>
+
+                <div class="card-bottom">
+                    <h2>Сайт №3</h2>
+                    <p>Описание появится позже</p></div>
+
+                <div class="arrow">↗</div>
             </a>
 
         </section>
 
     </main>
 
-
-    <!-- Нижняя часть -->
     <footer>
         <p>По всем вопросам — salicoffmih@gmail.com</p>
     </footer>
