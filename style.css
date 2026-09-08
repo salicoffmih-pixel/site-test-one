@@ -4,17 +4,24 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: #0b0b0b;
+    background: #080808;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* Главный блок */
+/* =========================
+   ГЛАВНЫЙ ЭКРАН
+========================= */
 
 .hero {
-    min-height: 65vh;
+    min-height: 68vh;
+
     padding: 70px 7vw;
 
     display: flex;
@@ -22,31 +29,38 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(48px, 7vw, 110px);
-    line-height: 0.95;
-    font-weight: 700;
-    letter-spacing: -4px;
+    font-size: clamp(55px, 8vw, 125px);
+    line-height: 0.9;
 
-    max-width: 750px;
+    font-weight: 700;
+    letter-spacing: -6px;
+
+    max-width: 900px;
 }
 
 
-/* Карточки */
+/* =========================
+   КАРТОЧКИ
+========================= */
 
 .cards {
-    padding: 40px 7vw 120px;
+    padding: 0 7vw 130px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
+    gap: 18px;
 }
 
 .card {
-    min-height: 260px;
+    position: relative;
 
-    padding: 30px;
+    min-height: 300px;
 
-    background: #141414;
+    padding: 28px;
+
+    background: #111111;
+
     border: 1px solid #242424;
 
     color: white;
@@ -55,72 +69,137 @@ body {
     display: flex;
     flex-direction: column;
 
-    transition: 
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .card:hover {
-    background: #191919;
-    border-color: #444;
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+
+    background: #161616;
+
+    border-color: #444444;
 }
 
-.card span {
-    color: #666;
+
+.number {
+    color: #555555;
+
     font-size: 14px;
-    margin-bottom: auto;
+    font-weight: 600;
 }
+
+
+.card-bottom {
+    margin-top: auto;
+}
+
 
 .card h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 32px;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
 }
+
 
 .card p {
-    color: #777;
-    font-size: 16px;
-}
+    color: #666666;
 
-
-/* Нижняя часть */
-
-footer {
-    background: #070707;
-    border-top: 1px solid #181818;
-
-    padding: 35px 7vw;
-
-    color: #666;
     font-size: 15px;
 }
 
 
-/* Адаптация под телефон */
+.arrow {
+    position: absolute;
+
+    right: 25px;
+    bottom: 23px;
+
+    font-size: 28px;
+
+    color: #666666;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.card:hover .arrow {
+    transform: translate(4px, -4px);
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    min-height: 120px;
+
+    padding: 35px 7vw;
+
+    background: #050505;
+
+    border-top: 1px solid #171717;
+
+    display: flex;
+    align-items: center;
+}
+
+
+footer p {
+    color: #555555;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
 
 @media (max-width: 800px) {
 
     .hero {
         min-height: 55vh;
-        padding: 40px 6vw;
+
+        padding: 45px 6vw;
     }
 
+
     .hero h1 {
-        font-size: clamp(42px, 12vw, 70px);
-        letter-spacing: -2px;
+        font-size: clamp(48px, 14vw, 80px);
+
+        letter-spacing: -3px;
     }
+
 
     .cards {
         grid-template-columns: 1fr;
-        padding: 20px 6vw 80px;
+
+        padding: 0 6vw 80px;
+
+        gap: 12px;
     }
 
+
     .card {
-        min-height: 200px;
+        min-height: 230px;
     }
+
 
     footer {
         padding: 30px 6vw;
     }
+
 }
